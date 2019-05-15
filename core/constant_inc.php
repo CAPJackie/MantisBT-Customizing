@@ -63,6 +63,13 @@ define( 'MANAGER', 70 );
 define( 'ADMINISTRATOR', 90 );
 define( 'NOBODY', 100 );
 
+# CUSTOM ACCESS LEVELS
+define( 'TEST_MANAGER', 70 );
+define( 'TEST_TEAM_LEADER', 55 );
+define( 'TEST_ENGINEER', 50);
+define( 'TEST_CONSULTANT', 40);
+define( 'TEST_ENVIRONMENT_ENGINEER', 90);
+
 define( 'DEFAULT_ACCESS_LEVEL', -1 );
 
 # This is used in add user to project

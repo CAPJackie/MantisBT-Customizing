@@ -8,6 +8,9 @@ switch( $g_active_language ) {
                 $s_email_reproducibility = 'Reproducible';
                 $s_reproducibility = 'Reproducible';
                 $s_reproducibility_enum_string = '10:si,20:no';
+				
+				$s_access_levels_enum_string = '40:consultor de tests,50:ingeniero de tests,55:lider de equipo de tests,70:gerente de tests,90:ingeniero de ambiente de tests';
+
 
 
 		break;
@@ -18,6 +21,9 @@ switch( $g_active_language ) {
                 $s_email_reproducibility = 'Reproducible';
                 $s_reproducibility = 'Reproducible';
                 $s_reproducibility_enum_string = '10:yes,20:no';
+				
+				$s_access_levels_enum_string = '40:test consultant,50:test engineer,55:test team leader,70:test manager,90:test environment engineer';
+
 
                 break;
 }
