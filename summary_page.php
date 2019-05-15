@@ -140,18 +140,18 @@ print_summary_submenu();
 	</div>
 
 	<!-- BY CATEGORY -->
-	<div class="space-10"></div>
+	<!--div class="space-10"></div>
 	<div class="widget-box table-responsive">
 		<table class="table table-hover table-bordered table-condensed table-striped">
 		<thead>
 			<tr>
-				<th class="width-35"><?php echo lang_get( 'by_category' ) ?></th>
-				<?php echo $t_summary_header ?>
+				<th class="width-35"><!?php echo lang_get( 'by_category' ) ?></th>
+				<!?php echo $t_summary_header ?>
 			</tr>
 		</thead>
-		<?php summary_print_by_category( $t_filter ) ?>
+		<!?php summary_print_by_category( $t_filter ) ?>
 	</table>
-	</div>
+	</div-->
 
 	<!-- TIME STATS -->
 	<div class="space-10"></div>
