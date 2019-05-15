@@ -1023,7 +1023,7 @@ $g_font_family_choices_local = array(
  * browser window title
  * @global string $g_window_title
  */
-$g_window_title = 'MantisBT - ECI';
+$g_window_title = 'MantisBT - Escuela Colombiana de Ingenieria Julio Garavito';
 
 /**
  * OpenSearch engine title prefix.
