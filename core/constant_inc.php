@@ -94,7 +94,11 @@ define( 'LOW', 20 );
 define( 'NORMAL', 30 );
 define( 'HIGH', 40 );
 define( 'URGENT', 50 );
-define( 'IMMEDIATE', 60 );
+
+# CUSTOM PRIORITY FIELDS
+define( 'DEFERRED', 10);
+define( 'DELAYED', 20);
+define( 'IMMEDIATE', 30);
 
 # severity
 define( 'FEATURE', 10 );
@@ -103,6 +107,8 @@ define( 'TEXT', 30 );
 define( 'TWEAK', 40 );
 define( 'CRASH', 70 );
 define( 'BLOCK', 80 );
+
+# CUSTOM SEVERITY FIELDS
 define( 'MINOR', 10 );
 define( 'MAJOR', 20 );
 define( 'CRITICAL', 30 );
