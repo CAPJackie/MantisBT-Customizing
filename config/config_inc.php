@@ -155,3 +155,7 @@ $g_bug_change_status_page_fields = array(
 	'target_version',
 	'view_state',
 );
+
+$g_default_bug_reproducibility = REPRODUCIBILITY_NO;
+
+$g_reproducibility_enum_string = '10:yes,20:no';

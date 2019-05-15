@@ -21,7 +21,7 @@
 /**
  * Mantis Version
  */
-define( 'MANTIS_VERSION', '2.20.0' );
+define( 'MANTIS_VERSION', '2.21.0' );
 define( 'FILTER_VERSION', 'v9' );
 
 # --- constants -------------------
@@ -113,6 +113,7 @@ define( 'MINOR', 10 );
 define( 'MAJOR', 20 );
 define( 'CRITICAL', 30 );
 
+
 # reproducibility
 define( 'REPRODUCIBILITY_ALWAYS', 10 );
 define( 'REPRODUCIBILITY_SOMETIMES', 30 );
@@ -120,6 +121,10 @@ define( 'REPRODUCIBILITY_RANDOM', 50 );
 define( 'REPRODUCIBILITY_HAVENOTTRIED', 70 );
 define( 'REPRODUCIBILITY_UNABLETODUPLICATE', 90 );
 define( 'REPRODUCIBILITY_NOTAPPLICABLE', 100 );
+
+#CUSTOM REPRODUCIBILITY FIELDS
+define( 'REPRODUCIBILITY_YES', 10) ;
+define( 'REPRODUCIBILITY_NO', 20);
 
 # projection
 define( 'PROJECTION_NONE', 10 );
@@ -266,6 +271,7 @@ define( 'ERROR_TYPE_MISMATCH', 26 );
 define( 'ERROR_SPAM_SUSPECTED', 27 );
 define( 'ERROR_FIELD_TOO_LONG', 28 );
 define( 'ERROR_INVALID_FIELD_VALUE', 29 );
+define( 'ERROR_LOGFILE_NOT_WRITABLE', 30 );
 
 # ERROR_CONFIG_*
 define( 'ERROR_CONFIG_OPT_NOT_FOUND', 100 );
@@ -742,3 +748,6 @@ define( 'DB_TYPE_MYSQL', 1 );
 define( 'DB_TYPE_PGSQL', 2 );
 define( 'DB_TYPE_MSSQL', 3 );
 define( 'DB_TYPE_ORACLE', 4 );
+
+# Database special capabilities identifiers
+define( 'DB_CAPABILITY_WINDOW_FUNCTIONS', 1 );

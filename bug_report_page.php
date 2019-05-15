@@ -255,32 +255,71 @@ if( $t_show_attachments ) {
 <div class="widget-main no-padding">
 <div class="table-responsive">
 <table class="table table-bordered table-condensed">
-<?php
-	event_signal( 'EVENT_REPORT_BUG_FORM_TOP', array( $t_project_id ) );
 
-	if( $t_show_category ) {
-?>
+<?php event_signal( 'EVENT_REPORT_BUG_FORM_TOP', array( $t_project_id ) ) ?>
 	<tr>
-		<th class="category" width="30%">
-			<?php
-			echo config_get( 'allow_no_category' ) ? '' : '<span class="required">*</span> ';
-			echo '<label for="category_id">';
-			print_documentation_link( 'category' );
-			echo '</label>';
-			?>
+		<th class="category">
+			<span class="required">*</span><label for="summary"><?php print_documentation_link( 'summary' ) ?></label>
 		</th>
-		<td width="70%">
-			<?php if( $t_changed_project ) {
-				echo '[' . project_get_field( $t_bug->project_id, 'name' ) . '] ';
-			} ?>
-			<select <?php echo helper_get_tab_index() ?> id="category_id" name="category_id" class="autofocus input-sm">
-				<?php
-					print_category_option_list( $f_category_id );
-				?>
-			</select>
+		<td>
+			<input <?php echo helper_get_tab_index() ?> type="text" id="summary" name="summary" size="105" maxlength="128" value="<?php echo string_attribute( $f_summary ) ?>" required />
 		</td>
 	</tr>
-<?php }
+	<tr>
+		<th class="category">
+			<span class="required">*</span><label for="description"><?php print_documentation_link( 'description' ) ?></label>
+		</th>
+		<td>
+			<textarea class="form-control" <?php echo helper_get_tab_index() ?> id="description" name="description" cols="80" rows="10" required><?php echo string_textarea( $f_description ) ?></textarea>
+		</td>
+	</tr>
+<?php 
+
+	if( $t_show_severity ) {
+		?>
+			<tr>
+				<th class="category">
+					<label for="severity"><?php print_documentation_link( 'severity' ) ?></label>
+				</th>
+				<td>
+					<select <?php echo helper_get_tab_index() ?> id="severity" name="severity" class="input-sm">
+						<?php print_enum_string_option_list( 'severity', $f_severity ) ?>
+					</select>
+				</td>
+			</tr>
+		<?php
+			}
+
+	if( $t_show_priority ) {
+		?>
+			<tr>
+				<th class="category">
+					<label for="priority"><?php print_documentation_link( 'priority' ) ?></label>
+				</th>
+				<td>
+					<select <?php echo helper_get_tab_index() ?> id="priority" name="priority" class="input-sm">
+						<?php print_enum_string_option_list( 'priority', $f_priority ) ?>
+					</select>
+				</td>
+			</tr>
+		<?php
+			}
+		if( $t_show_handler ) { 
+			?>
+				<tr>
+					<th class="category">
+						<label for="handler_id"><?php echo lang_get( 'assign_to' ) ?></label>
+				</th>
+				<td>
+					<select <?php echo helper_get_tab_index() ?> id="handler_id" name="handler_id" class="input-sm">
+						<option value="0" selected="selected"></option>
+						<?php print_assign_to_option_list( $f_handler_id ) ?>
+					</select>
+				</td>
+			</tr>
+		<?php 
+			} 
+
 
 	if( $t_show_reproducibility ) {
 ?>
@@ -295,8 +334,22 @@ if( $t_show_attachments ) {
 			</select>
 		</td>
 	</tr>
-<?php
+	<?php
 	}
+
+	if( $t_show_steps_to_reproduce ) { ?>
+		<tr>
+			<th class="category">
+				<label for="steps_to_reproduce"><?php print_documentation_link( 'steps_to_reproduce' ) ?></label>
+			</th>
+			<td>
+				<textarea class="form-control" <?php echo helper_get_tab_index() ?> id="steps_to_reproduce" name="steps_to_reproduce" cols="80" rows="10"><?php echo string_textarea( $f_steps_to_reproduce ) ?></textarea>
+			</td>
+		</tr>
+	<?php } 
+
+
+
 
 	if( $t_show_eta ) {
 ?>
@@ -314,35 +367,7 @@ if( $t_show_attachments ) {
 <?php
 	}
 
-	if( $t_show_severity ) {
-?>
-	<tr>
-		<th class="category">
-			<label for="severity"><?php print_documentation_link( 'severity' ) ?></label>
-		</th>
-		<td>
-			<select <?php echo helper_get_tab_index() ?> id="severity" name="severity" class="input-sm">
-				<?php print_enum_string_option_list( 'severity', $f_severity ) ?>
-			</select>
-		</td>
-	</tr>
-<?php
-	}
 
-	if( $t_show_priority ) {
-?>
-	<tr>
-		<th class="category">
-			<label for="priority"><?php print_documentation_link( 'priority' ) ?></label>
-		</th>
-		<td>
-			<select <?php echo helper_get_tab_index() ?> id="priority" name="priority" class="input-sm">
-				<?php print_enum_string_option_list( 'priority', $f_priority ) ?>
-			</select>
-		</td>
-	</tr>
-<?php
-	}
 
 	if( $t_show_due_date ) {
 		$t_date_to_display = '';
@@ -470,19 +495,6 @@ if( $t_show_attachments ) {
 	</tr>
 <?php } ?>
 
-<?php if( $t_show_handler ) { ?>
-	<tr>
-		<th class="category">
-			<label for="handler_id"><?php echo lang_get( 'assign_to' ) ?></label>
-		</th>
-		<td>
-			<select <?php echo helper_get_tab_index() ?> id="handler_id" name="handler_id" class="input-sm">
-				<option value="0" selected="selected"></option>
-				<?php print_assign_to_option_list( $f_handler_id ) ?>
-			</select>
-		</td>
-	</tr>
-<?php } ?>
 
 <?php if( $t_show_status ) { ?>
 	<tr>
@@ -537,45 +549,9 @@ if( $t_show_attachments ) {
 		</td>
 	</tr>
 <?php } ?>
-<?php event_signal( 'EVENT_REPORT_BUG_FORM', array( $t_project_id ) ) ?>
-	<tr>
-		<th class="category">
-			<span class="required">*</span><label for="summary"><?php print_documentation_link( 'summary' ) ?></label>
-		</th>
-		<td>
-			<input <?php echo helper_get_tab_index() ?> type="text" id="summary" name="summary" size="105" maxlength="128" value="<?php echo string_attribute( $f_summary ) ?>" required />
-		</td>
-	</tr>
-	<tr>
-		<th class="category">
-			<span class="required">*</span><label for="description"><?php print_documentation_link( 'description' ) ?></label>
-		</th>
-		<td>
-			<textarea class="form-control" <?php echo helper_get_tab_index() ?> id="description" name="description" cols="80" rows="10" required><?php echo string_textarea( $f_description ) ?></textarea>
-		</td>
-	</tr>
 
-<?php if( $t_show_steps_to_reproduce ) { ?>
-		<tr>
-			<th class="category">
-				<label for="steps_to_reproduce"><?php print_documentation_link( 'steps_to_reproduce' ) ?></label>
-			</th>
-			<td>
-				<textarea class="form-control" <?php echo helper_get_tab_index() ?> id="steps_to_reproduce" name="steps_to_reproduce" cols="80" rows="10"><?php echo string_textarea( $f_steps_to_reproduce ) ?></textarea>
-			</td>
-		</tr>
-<?php } ?>
 
-<?php if( $t_show_additional_info ) { ?>
-	<tr>
-		<th class="category">
-			<label for="additional_info"><?php print_documentation_link( 'additional_information' ) ?></label>
-		</th>
-		<td>
-			<textarea class="form-control" <?php echo helper_get_tab_index() ?> id="additional_info" name="additional_info" cols="80" rows="10"><?php echo string_textarea( $f_additional_info ) ?></textarea>
-		</td>
-	</tr>
-<?php } ?>
+
 <?php if( $t_show_tags ) { ?>
 	<tr>
 		<th class="category">
