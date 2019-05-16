@@ -186,6 +186,7 @@ $g_monitor_add_others_bug_threshold = TEST_ENGINEER;
 $g_monitor_delete_others_bug_threshold = TEST_TEAM_LEADER;
 $g_private_bug_threshold = DEVELOPER;
 $g_handle_bug_threshold = array(DEVELOPER);
+$g_update_bug_assign_threshold = array(DEVELOPER, TEST_TEAM_LEADER, TEST_MANAGER, TEST_ENVIRONMENT_ENGINEER);
 $g_private_bugnote_threshold = TEST_TEAM_LEADER;
 $g_view_handler_threshold = DEVELOPER;
 $g_view_history_threshold = DEVELOPER;
