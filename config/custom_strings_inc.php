@@ -1,5 +1,4 @@
 <?php
-# Translation for Custom Severity Code: critical
 switch( $g_active_language ) {
 	case 'spanish':
                 $s_severity_enum_string = '10:menor,20:mayor,30:critico';
@@ -9,7 +8,7 @@ switch( $g_active_language ) {
                 $s_reproducibility = 'Reproducible';
                 $s_reproducibility_enum_string = '10:si,20:no';
 				
-				$s_access_levels_enum_string = '40:consultor de tests,50:ingeniero de tests,55:lider de equipo de tests,70:gerente de tests,90:ingeniero de ambiente de tests';
+                $g_access_levels_enum_string = '20:desarrollador, 30:consultor de tests,40:ingeniero de tests,50:lider del equipo de tests,60:administrador de tests,90:ingeniero de ambiente de tests';
 
 
 
@@ -22,7 +21,7 @@ switch( $g_active_language ) {
                 $s_reproducibility = 'Reproducible';
                 $s_reproducibility_enum_string = '10:yes,20:no';
 				
-				$s_access_levels_enum_string = '40:test consultant,50:test engineer,55:test team leader,70:test manager,90:test environment engineer';
+                $g_access_levels_enum_string = '20:developer, 30:test consultant,40:test engineer,50:test team leader,60:test manager,90:test environment engineer';
 
 
                 break;
