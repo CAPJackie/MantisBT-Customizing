@@ -2514,6 +2514,15 @@ function filter_form_draw_inputs( $p_filter, $p_for_screen = true, $p_static = f
 	$t_row2 = new FilterBoxGridLayout( $t_filter_cols , FilterBoxGridLayout::ORIENTATION_VERTICAL );
 
 	
+	$t_row2->add_item( new TableFieldsItem(
+		$get_field_header( 'show_category_filter', lang_get( 'category' ) ),
+		filter_form_get_input( $t_filter, 'show_category', $t_show_inputs ),
+		1 /* colspan */,
+		null /* class */,
+		'show_category_filter_target' /* content id */
+		));
+
+
 	if( FILTER_VIEW_TYPE_SIMPLE == $t_view_type ) {
 		$t_row2->add_item( new TableFieldsItem(
 				$get_field_header( 'hide_status_filter', lang_get( 'hide_status' ) ),
