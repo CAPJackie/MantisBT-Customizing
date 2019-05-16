@@ -255,8 +255,32 @@ if( $t_show_attachments ) {
 <div class="widget-main no-padding">
 <div class="table-responsive">
 <table class="table table-bordered table-condensed">
+<?php
+	event_signal( 'EVENT_REPORT_BUG_FORM_TOP', array( $t_project_id ) );
 
-<?php event_signal( 'EVENT_REPORT_BUG_FORM_TOP', array( $t_project_id ) ) ?>
+	if( $t_show_category ) {
+?>
+	<tr>
+		<th class="category" width="30%">
+			<?php
+			echo config_get( 'allow_no_category' ) ? '' : '<span class="required">*</span> ';
+			echo '<label for="category_id">';
+			print_documentation_link( 'category' );
+			echo '</label>';
+			?>
+		</th>
+		<td width="70%">
+			<?php if( $t_changed_project ) {
+				echo '[' . project_get_field( $t_bug->project_id, 'name' ) . '] ';
+			} ?>
+			<select <?php echo helper_get_tab_index() ?> id="category_id" name="category_id" class="autofocus input-sm">
+				<?php
+					print_category_option_list( $f_category_id );
+				?>
+			</select>
+		</td>
+	</tr>
+	<?php } ?>
 	<tr>
 		<th class="category">
 			<span class="required">*</span><label for="summary"><?php print_documentation_link( 'summary' ) ?></label>

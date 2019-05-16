@@ -38,25 +38,25 @@ $g_allow_no_category = ON;
 
 $g_view_issues_page_columns = array(
 	'selection', 'edit', 'priority', 'id', 'sponsorship_total',
-	'bugnotes_count', 'attachment_count', 'severity', 'status',
+	'bugnotes_count', 'category', 'attachment_count', 'severity', 'status',
 	'last_updated', 'summary'
 );
 
 $g_print_issues_page_columns = array(
 	'selection', 'priority', 'id', 'sponsorship_total', 'bugnotes_count',
-	'attachment_count', 'severity', 'status', 'last_updated',
+	'attachment_count', 'category', 'severity', 'status', 'last_updated',
 	'summary'
 );
 
 $g_csv_columns = array(
 	'id', 'project_id', 'reporter_id', 'handler_id', 'priority',
-	'severity', 'reproducibility', 'version', 'projection',
+	'severity', 'category', 'reproducibility', 'version', 'projection',
 	'date_submitted', 'eta', 'os', 'os_build', 'platform', 'view_state',
 	'last_updated', 'summary', 'status', 'resolution', 'fixed_in_version'
 );
 
 $g_excel_columns = array(
-	'id', 'project_id', 'reporter_id', 'handler_id', 'priority', 'severity',
+	'id', 'project_id', 'reporter_id', 'handler_id', 'priority', 'severity', 'category', 
 	'reproducibility', 'version', 'projection',
 	'date_submitted', 'eta', 'os', 'os_build', 'platform', 'view_state',
 	'last_updated', 'summary', 'status', 'resolution', 'fixed_in_version'
@@ -67,6 +67,7 @@ $g_bug_report_page_fields = array(
 	'due_date',
 	'handler',
 	'priority',
+	'category',
 	'product_build',
 	'product_version',
 	'reproducibility',
@@ -81,6 +82,7 @@ $g_bug_view_page_fields = array(
 	'attachments',
 	'date_submitted',
 	'description',
+	'category',
 	'due_date',
 	'eta',
 	'fixed_in_version',
@@ -113,6 +115,7 @@ $g_bug_update_page_fields = array(
 	'handler',
 	'id',
 	'last_updated',
+	'category',
 	'priority',
 	'product_build',
 	'product_version',
@@ -139,6 +142,7 @@ $g_bug_change_status_page_fields = array(
 	'handler',
 	'id',
 	'last_updated',
+	'category', 
 	'priority',
 	'product_build',
 	'product_version',
