@@ -99,12 +99,19 @@ El formulario se personalizó con los siguientes campos:
 
 ## Niveles de acceso
 Se configuraron los siguientes roles de acuerdo a la norma IEEE 829 (La cual recomienda el modelo TMMi):
-- **Desarrollador**:
-- **Consultor de tests**:
-- **Ingeniero de tests**:
-- **Lider del equipo de tests**:
-- **Gerente de tests**:
-- **Ingeniero de ambiente de tests**:
+
+- **Desarrollador**: Personal que trabaja desarrollando el Software necesario para que el producto cumpla con los requerimientos estipulados previamente. Este usuario no puede reportar defectos (Ya que es la labor del personal de QA), sin embargo es el único que puede solucionar y cambiar el estado a los defectos (también es el unico rol al que se le pueden asignar los defectos).
+
+- **Consultor de tests**: Usuario encargado de reportar incidentes.
+
+- **Ingeniero de tests**: Usuario encargado de reportar incidentes, también se encarga de optimizar el proceso de testing constantemente proponiendo nuevas herramientas o cambios dentro del proceso de testing llevado a cabo.
+
+- **Lider del equipo de tests**: El lider es el encargado de configurar los proyectos y los permisos de los usuarios vinculados a ellos, también puede reportar incidencias, ver el resumen de cambios en el proceso y sacar reportes de los datos de la aplicación.
+
+- **Gerente de tests**: Tiene la mayoria de los permisos en la herramienta, sin embargo, no es muy común que use la misma. Su labor va mas asociada al proceso comercial y administrativo de los proyectos y su integración con el ciclo de vida del desarrollo de Software.
+
+- **Ingeniero de ambiente de tests**: Personal que se encarga de toda la administración de la herramienta. Una de sus funciones es innovar el procveso de testing consultando nuevos modelos y tendencias en el mercado. Su labor tambien es personalizar la herramienta garantizando la experiencia y la interacción del usuario (Para agilizar los procesos de reporte).
+
 
 ## Version del producto
 Pertenece a la versión del proyecto o el numero del Sprint. Para configurar el versionamiento se requiere ir a la pestaña de configuración/administrar proyectos
