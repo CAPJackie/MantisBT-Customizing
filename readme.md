@@ -63,18 +63,39 @@ Configuración
 
 ## Formulario para crear una incidencia
 El formulario se personalizó con los siguientes campos:
-- **Categoria**: asdasda
-- **Resumen**: ad
-- **Descripción**:
-- **Severidad**:
-- **Prioridad**:
-- **Asignar a**:
-- **Reproducible**:
-- **Pasos para reproducir**:
-- **Etiquetas**:
-- **Resultados esperados**:
-- **Subir Archivos**:
-- **Visibilidad**:
+- **Categoria**: Modulos definidos para el/los proyecto, para agregar una categoria vaya al panel de configuración desde una cuenta de administrador
+
+- **Resumen**: Debe ser el campo en el que se dé una explicación a grandes rasgos del defecto encontrado
+
+- **Descripción**: Toda la información que se pueda brindar sobre el defecto debe ser colocada en este campo
+
+- **Severidad**: Gravedad del defecto encontrado, De acuerdo a la norma IEEE 829 se configuraron los siguientes niveles de severidad: menor, mayor, crítico.
+
+- **Prioridad**: Indicador para saber que tanta prioridad tiene el defecto encontrado, Se configuraron los siguientes niveles de prioridad de acuerdo a la norma IEEE 829: diferida, retrasada e inmediata.
+
+- **Asignar a**: Desarrollador al que se le va a asignar el defecto, puede ser vacio si no se sabe a quien asignar.
+
+- **Reproducible**: Hay dos opciones para la reproducibilidad: Es reproducible, o no es reproducible (Se da a entender para que sirve cada uno)
+
+- **Pasos para reproducir**: Información detallada con los pasos para reproducir el defecto. *Nota: Si no es reproducible no se llena este campo pero obligatoriamente se tiene que adjuntar una imagen específica del error*
+
+- **Fecha límite**: Fecha límite para solucionar el defecto
+
+- **Versión del producto**: Version en la cual se encuentra actualmente el Software
+
+- **Pervisto para version**: Versión para la cual se tenía/tiene que cumplir el requerimiento asociado al defecto
+
+- **Etiquetas**: Son labels que se le pueden asignar a cada defecto, se crean en la pantalla de configuración con su respectiva descripción. Por ejemplo, para el proyecto de prueba que se configuró se crearon las siguientes etiquetas:
+   - Ayuda requerida
+   - Bug
+   - Duplicado
+   - Mejora
+
+- **Resultados esperados**: Descripción del comportamiento esperado asociado a la funcionalidad que se está probando
+
+- **Subir Archivos**: Opción para adjuntar archivos de toda indole (imagenes, documentos, etc...)
+
+- **Visibilidad**: ¿Quiere que todos los usuarios asociados al proyecto vean el defecto? o solamente los desarrolladores y el personal administrativo
 
 ## Niveles de acceso
 Se configuraron los siguientes roles de acuerdo a la norma IEEE 829 (La cual recomienda el modelo TMMi):
@@ -84,31 +105,6 @@ Se configuraron los siguientes roles de acuerdo a la norma IEEE 829 (La cual rec
 - **Lider del equipo de tests**:
 - **Gerente de tests**:
 - **Ingeniero de ambiente de tests**:
-
-## Severidad
-De acuerdo a la norma IEEE 829 se configuraron los siguientes niveles de severidad:
-- **Menor**:
-- **Mayor**:
-- **Crítico**:
-
-## Prioridad
-Se configuraron los siguientes niveles de prioridad de acuerdo a la norma IEEE 829:
-- **Diferida**:
-- **Retrasada**:
-- **Inmediata**:
-
-## Reproducibilidad
-Hay dos opciones para la reproducibilidad: Es reproducible, o no es reproducible (Se da a entender para que sirve cada uno).
-
-## Categorias
-En la pantalla de configuración se deben agregar las categorias que tiene cada proyecto o en general todos los proyectos. Estas categorias definen el modulo al que pertenece cada uno de los defectos.
-
-## Etiquetas
-Son labels que se le pueden asignar a cada defecto, se crean en la pantalla de configuración con su respectiva descripción. Por ejemplo, para el proyecto de prueba que se configuró se crearon las siguientes etiquetas:
-- Ayuda requerida
-- Bug
-- Duplicado
-- Mejora
 
 ## Version del producto
 Pertenece a la versión del proyecto o el numero del Sprint. Para configurar el versionamiento se requiere ir a la pestaña de configuración/administrar proyectos
