@@ -47,3 +47,74 @@ Instalación
 Configuración
 -------------
 
+# Diseño
+- **Imagenes:** Para cambiar las imagenes principales de la aplicación se realizó lo siguiente:
+   1. Se agrego logo de la universidad en dos distintos archivos: un [icono](images/iconeci.ico) y una [imagen](images/eci.png)
+   2. Dentro del [archivo](config/config_inc.php) de configuración se agregaron las siguientes lineas:
+   ![config inc code snippet](doc/carbon.png)
+   
+- **Titulo:** Para cambiar el titulo agregue la siguiente variable dentro del archivo de [configuración](config/config_inc.php):
+![title configuration](doc/header.png)
+
+- **Estilos:** Todas las tonalidades de los estilos fueron cambiadas de azul a rojo, los archivos modificados son: [default.css](css/default.css), [ace.min.css](css/ace.min.css) y [ace-skins.min.css](css/ace-skins.min.css).
+
+
+# Funcionalidades
+
+## Formulario para crear una incidencia
+El formulario se personalizó con los siguientes campos:
+- **Categoria**: asdasda
+- **Resumen**: ad
+- **Descripción**:
+- **Severidad**:
+- **Prioridad**:
+- **Asignar a**:
+- **Reproducible**:
+- **Pasos para reproducir**:
+- **Etiquetas**:
+- **Resultados esperados**:
+- **Subir Archivos**:
+- **Visibilidad**:
+
+## Niveles de acceso
+Se configuraron los siguientes roles de acuerdo a la norma IEEE 829 (La cual recomienda el modelo TMMi):
+- **Desarrollador**:
+- **Consultor de tests**:
+- **Ingeniero de tests**:
+- **Lider del equipo de tests**:
+- **Gerente de tests**:
+- **Ingeniero de ambiente de tests**:
+
+## Severidad
+De acuerdo a la norma IEEE 829 se configuraron los siguientes niveles de severidad:
+- **Menor**:
+- **Mayor**:
+- **Crítico**:
+
+## Prioridad
+Se configuraron los siguientes niveles de prioridad de acuerdo a la norma IEEE 829:
+- **Diferida**:
+- **Retrasada**:
+- **Inmediata**:
+
+## Reproducibilidad
+Hay dos opciones para la reproducibilidad: Es reproducible, o no es reproducible (Se da a entender para que sirve cada uno).
+
+## Categorias
+En la pantalla de configuración se deben agregar las categorias que tiene cada proyecto o en general todos los proyectos. Estas categorias definen el modulo al que pertenece cada uno de los defectos.
+
+## Etiquetas
+Son labels que se le pueden asignar a cada defecto, se crean en la pantalla de configuración con su respectiva descripción. Por ejemplo, para el proyecto de prueba que se configuró se crearon las siguientes etiquetas:
+- Ayuda requerida
+- Bug
+- Duplicado
+- Mejora
+
+## Version del producto
+Pertenece a la versión del proyecto o el numero del Sprint. Para configurar el versionamiento se requiere ir a la pestaña de configuración/administrar proyectos
+
+## Campos personalizados
+Si se quieren agregar y asdignar a cada proyecto campos personalizados en el formulario para crear un defecto acceda a la pestaña de configuración de la herramienta
+
+## Envío de correos
+Para poder enviar correos entre los integrantes del equipo de QA es necesario realizar una configuración adicional en algunos archivos, para conocer a mayor detalle esta configuración revise el manual creado.
