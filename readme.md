@@ -4,13 +4,13 @@ Escuela Colombiana de Ingeniería Julio Garavito Mantis Customization project
 Vistas principales
 -----------
 
-![My view](doc/mi_vista.png)
+![My view](doc/mi_vista.PNG)
 
-![Bugs view](doc/ver_incidencias.png)
+![Bugs view](doc/ver_incidencias.PNG)
 
-![Report Incident view](doc/reportar_incidencia.png)
+![Report Incident view](doc/reportar_incidencia.PNG)
 
-![Summary view](doc/resumen.png)
+![Summary view](doc/resumen.PNG)
 
 Documentación
 -------------
